@@ -17,7 +17,7 @@ import com.example.demo.service.JwtService;
 
 @RestController
 @RequestMapping("/api/profile")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*") // Allow requests from any origin
 public class ProfileController {
 
     @Autowired
