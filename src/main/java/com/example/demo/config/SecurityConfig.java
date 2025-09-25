@@ -36,7 +36,7 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://ec2-34-228-81-125.compute-1.amazonaws.com:5173") // allow only your EC2
+                        .allowedOrigins("http://ec2-34-228-81-125.compute-1.amazonaws.com") // allow only your EC2
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true); // set to true when specifying a specific origin
