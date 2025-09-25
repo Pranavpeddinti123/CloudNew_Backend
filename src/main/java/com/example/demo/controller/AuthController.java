@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "*") // Allow requests from any origin
+@CrossOrigin(origins = "http://ec2-34-228-81-125.compute-1.amazonaws.com") // Allow only EC2 public DNS
 public class AuthController {
 
     private final AuthService authService;
