@@ -9,16 +9,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://ec2-34-228-81-125.compute-1.amazonaws.com") // Allow only EC2 public DNS
+@RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://ec2-34-228-81-125.compute-1.amazonaws.com:5173") // React app
 public class AuthController {
 
     private final AuthService authService;
-
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
 
-    @PostMapping("/api/auth/register")
+    @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         try {
             String token = authService.register(user);
@@ -30,7 +30,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/api/auth/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> req) {
         try {
             String token = authService.login(req.get("email"), req.get("password"));
