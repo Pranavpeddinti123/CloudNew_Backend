@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://ec2-34-228-81-125.compute-1.amazonaws.com:5173") // React app
+@CrossOrigin(origins = "http://ec2-34-228-81-125.compute-1.amazonaws.com") // React app
 public class AuthController {
 
     private final AuthService authService;
