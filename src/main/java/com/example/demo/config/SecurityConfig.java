@@ -36,10 +36,10 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*") // allow all origins
+                        .allowedOrigins("http://ec2-34-228-81-125.compute-1.amazonaws.com:5173") // allow only your EC2
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(false); // must be false when using "*"
+                        .allowCredentials(true); // set to true when specifying a specific origin
             }
         };
     }
